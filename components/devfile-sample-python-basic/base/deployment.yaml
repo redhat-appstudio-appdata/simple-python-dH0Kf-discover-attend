@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: devfile-sample-python-basic
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:dev-release-team-tenant-devfile-sample-python-basic
+      - image: quay.io/redhat-appstudio/user-workload@sha256:04035f0366314192d7a8b42b8026c999e8fb746fbad9462eb041ae19e81576f5
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 8081
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
