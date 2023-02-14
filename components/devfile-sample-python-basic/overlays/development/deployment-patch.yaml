@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-python-basic
+  namespace: dev-release-team-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:05accb16f4b922f5561d5db90ee283dcf5c8d722173b44b4ef03f6b3411b48a6
+        name: my-python
+        resources: {}
+status: {}
